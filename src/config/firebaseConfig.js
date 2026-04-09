@@ -11,6 +11,7 @@ const firebaseConfig = {
   measurementId: process.env.MEASUREMENT_ID
 };
 
+
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     firebaseConfig
