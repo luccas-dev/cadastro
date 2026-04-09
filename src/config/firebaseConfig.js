@@ -1,6 +1,8 @@
 const admin = require('firebase-admin')
 const serviceAccount = JSON.parse(process.env.KEY_ACCOUNT)
 
+serviceAccount.private_key = serviceAccount.private_key.replace(/\\n/g, '\n');
+
 const firebaseConfig = {
   apiKey: process.env.API_KEY,
   authDomain: process.env.AUTH_DOMAIN,
