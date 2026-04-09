@@ -1,5 +1,5 @@
 const admin = require('firebase-admin')
-const serviceAccount = require(process.env.KEY_ACCOUNT)
+const serviceAccount = JSON.parse(process.env.KEY_ACCOUNT)
 
 const firebaseConfig = {
   apiKey: process.env.API_KEY,
