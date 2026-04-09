@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CADASTRO 2026</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <h1>CADASTRO</h1>
+    <form action="/register" method="post">
+        <label for="nome">
+            Nome:
+            <input type="text" name="nome" id="nome" placeholder="Digite seu nome...">
+        </label>
+
+        <section id="dadosLocal">
+            <label for="endereco">
+                Endereço:
+                <input type="text" name="endereco" id="endereco" required>
+            </label>
+
+            <label for="bairro">
+                Bairro:
+                <input type="text" name="bairro" id="bairro" required>
+            </label>
+
+            <label for="municipio">
+                Município:
+                <input type="text" name="municipio" id="municipio" required>
+            </label>
+        </section>
+
+        <section id="dadosEleitorais">
+            <label for="titulo">
+                Título de Eleitor:
+                <input type="number" name="titulo" id="titulo" required>
+            </label>
+    
+            <label for="zona">
+                Zona Eleitoral:
+                <input type="number" name="zona" id="zona" required>
+            </label>
+
+            <label for="secao">
+                Seção:
+                <input type="number" name="secao" id="secao" required>
+            </label>
+        </section>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
