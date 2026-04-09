@@ -28,20 +28,20 @@ form.addEventListener('submit', async (event) => {
 
         const data = await response.json()
 
-        if(!response.ok) {
-            message(data.message)
-            const errorElement = document.getElementById('message')
-            errorElement.style.backgroundColor = '#f44336';
-            setTimeout(() => {
-                errorElement.remove()
-            }, 5000)
-        } else {
+        if(response.ok) {
             message(data.message)
             const successElement = document.getElementById('message')
             successElement.style.backgroundColor = '#4CAF50';
             setTimeout(() => {
                 successElement.remove()
                 location.reload()
+            }, 5000)
+        } else {
+            message(data.message)
+            const errorElement = document.getElementById('message')
+            errorElement.style.backgroundColor = '#f44336';
+            setTimeout(() => {
+                errorElement.remove()
             }, 5000)
         }
     } catch (error) {
