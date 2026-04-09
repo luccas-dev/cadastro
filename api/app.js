@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const path = require('path')
-const registerRoute = require('./src/routes/registerRoute')
+const registerRoute = require('../src/routes/registerRoute')
 
 const app = express()
 const port = process.env.PORT
@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 })
 
 app.use(express.json())
-app.use('/register', registerRoute)
+app.use('/api/register', registerRoute)
 
 app.listen(port, () => {
     console.log('Server is Running')
