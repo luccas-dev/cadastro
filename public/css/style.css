@@ -13,3 +13,57 @@
     padding: 10px;
     border-radius: 5px;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding-block: 2rem;
+
+    background: #d1c2a0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+section {
+    display: flex;
+    gap: 1rem;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+
+    font-size: .9rem;
+}
+
+input {
+    padding: .6rem;
+    border: .5px solid #0000005e;
+    border-radius: .3rem;
+    box-shadow: 1px 1px 5px #00000018
+}
+
+button {
+    width: fit-content;
+    margin: auto;
+
+    padding: .6rem 1.5rem;
+    border: 1px solid #2c9118;
+    border-radius: .3rem;
+
+    background: #4bee2a;
+
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: .8rem;
+
+    cursor: pointer;
+}

@@ -4,7 +4,6 @@ const path = require('path')
 const registerRoute = require('../src/routes/registerRoute')
 
 const app = express()
-const port = process.env.PORT
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, '../public')))
@@ -16,6 +15,6 @@ app.get('/', (req, res) => {
 app.use(express.json())
 app.use('/api/register', registerRoute)
 
-app.listen(port, () => {
+app.listen(process.env.PORT, () => {
     console.log('Server is Running')
 })
