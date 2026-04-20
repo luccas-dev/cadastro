@@ -9,6 +9,7 @@ exports.registerVoter = async (req, res) => {
         */
 
         const voterTitle = await db.collection('voters').where('titulo', '==', titulo).get()
+        // validarTitulo(titulo)
 
         if(voterTitle.empty) {
             const newVoter = await db.collection('voters').add({
