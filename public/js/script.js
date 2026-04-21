@@ -1,9 +1,12 @@
 const form = document.querySelector('form')
 
-function message(message) {
+function message() {
+    if(document.getElementById('message')) {
+        document.getElementById('message').remove()
+    }
     const containerMessage = document.createElement('div')
     containerMessage.id = 'message'
-    containerMessage.innerText = message
+    // containerMessage.innerText = message
 
     form.appendChild(containerMessage)
 }
@@ -69,20 +72,29 @@ form.addEventListener('submit', async (event) => {
         })
 
         const data = await response.json()
+        message()
 
         if(response.ok) {
-            message(data.message)
             const successElement = document.getElementById('message')
-            successElement.classList.toggle('success')
-            setTimeout(() => {
-                location.reload()
-            }, 3000)
+            successElement.innerHTML = data.message
+            successElement.classList.add('success')
+            setTimeout(() => clearForm(), 1000)
         } else {
-            message(data.message)
             const errorElement = document.getElementById('message')
-            errorElement.classList.toggle('error')
+            errorElement.innerHTML = data.message
+            errorElement.classList.add('error')
         }
     } catch (error) {
         console.log('ERRO: ', error)
     }
 })
+
+function clearForm() {
+    form.nome.value = ''
+    form.municipio.value = ''
+    form.bairro.value = ''
+    form.endereco.value = ''
+    form.titulo.value = ''
+    form.zona.value = ''
+    form.secao.value = ''
+}

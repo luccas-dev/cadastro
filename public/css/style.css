@@ -15,12 +15,12 @@
 
     &.success {
         background: #4CAF50;
-        animation: fadeIn .5s ease-in-out both, fadeIn 1.5s 2s ease-in-out forwards reverse;
+        animation: fadeIn .5s ease-in-out both, fadeIn 2.5s 2s ease-in-out forwards reverse;
     }
 
     &.error {
         background: #f44336;
-        animation: fadeIn .5s ease-in-out both, fadeIn 1.5s 2s ease-in-out forwards reverse;
+        animation: fadeIn .5s ease-in-out both, fadeIn 2.5s 2s ease-in-out forwards reverse;
     }
 }
 
