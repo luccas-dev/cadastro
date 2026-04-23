@@ -1,9 +1,9 @@
 require('dotenv').config()
 const express = require('express')
+const app = express()
 const path = require('path')
 const registerRoute = require('../src/routes/registerRoute')
 
-const app = express()
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, '../public')))

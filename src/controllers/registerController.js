@@ -4,12 +4,7 @@ exports.registerVoter = async (req, res) => {
     try {
         const {nome, municipio, bairro, endereco, titulo, zona, secao} = req.body
 
-        /*
-            Verificar se o titulo é válido
-        */
-
         const voterTitle = await db.collection('voters').where('titulo', '==', titulo).get()
-        // validarTitulo(titulo)
 
         if(voterTitle.empty) {
             const newVoter = await db.collection('voters').add({
@@ -31,4 +26,14 @@ exports.registerVoter = async (req, res) => {
     } catch (error) {
         console.log('ERRO: ', error)
     }
+}
+
+exports.listVoter = async (req, res) => {
+    const voters = await db.collection('voters').get()
+    const list = voters.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+    }))
+
+    res.json(list)
 }

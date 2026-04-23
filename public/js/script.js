@@ -6,8 +6,7 @@ function message() {
     }
     const containerMessage = document.createElement('div')
     containerMessage.id = 'message'
-    // containerMessage.innerText = message
-
+    
     form.appendChild(containerMessage)
 }
 

@@ -78,6 +78,16 @@ button {
     cursor: pointer;
 }
 
+/* USERS LIST */
+#listTable, th, td {
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 5px;
+}
+
 
 /* ANIMAÇÕES */
 
