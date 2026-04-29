@@ -1,9 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 #message {
     position: fixed;
     bottom: 1.3rem;
@@ -24,17 +18,6 @@
     }
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    padding-block: 2rem;
-
-    background: #d1c2a0;
-}
-
 form {
     display: flex;
     flex-direction: column;
@@ -47,6 +30,7 @@ section {
 }
 
 label {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: .2rem;
@@ -55,39 +39,62 @@ label {
 }
 
 input {
+    width: 100%;
     padding: .6rem;
     border: .5px solid #0000005e;
     border-radius: .3rem;
     box-shadow: 1px 1px 5px #00000018
 }
 
-button {
-    width: fit-content;
-    margin: auto;
-
+.btn {
     padding: .6rem 1.5rem;
-    border: 1px solid #2c9118;
     border-radius: .3rem;
-
-    background: #4bee2a;
+    border: 1px solid #2c9118;
 
     text-transform: uppercase;
     font-weight: bold;
     font-size: .8rem;
 
+    transition: background .3s ease-in-out;
+
     cursor: pointer;
 }
 
-/* USERS LIST */
-#listTable, th, td {
-    border: 1px solid #000;
-    border-collapse: collapse;
+button {
+    width: fit-content;
+    margin: auto;
+
+    background: #4bee2a;
+
+    &:hover {
+        background: #35ac1d;
+    }
 }
 
-th, td {
-    padding: 5px;
+#btn-list {
+    margin-top: 1.3rem;
+
+    background: transparent;
+
+    text-decoration: none;
+    color: black;
 }
 
+#btn-list:hover {
+    background: #4bee2a;
+}
+
+@media (max-width: 600px) {
+    form {
+        max-width: 300px;
+        width: 100%;
+        margin-top: 1.3rem;
+    }
+    
+    section {
+        flex-direction: column;
+    }
+}
 
 /* ANIMAÇÕES */
 
